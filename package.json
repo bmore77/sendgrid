@@ -1,0 +1,12 @@
+{
+  "name": "sendgrid-cleanup",
+  "version": "1.0.0",
+  "main": "sendgrid-cleanup.js",
+  "scripts": {
+    "start": "node sendgrid-cleanup.js"
+  },
+  "dependencies": {
+    "@sendgrid/client": "^7.7.0",
+    "dotenv": "^16.0.3"
+  }
+}
