@@ -1,0 +1,26 @@
+name: Remove Harmsag Emails from Suppression List
+
+on:
+  schedule:
+    - cron: "0 * * * *" # every hour
+  workflow_dispatch:
+
+jobs:
+  clean_suppressions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run cleanup script
+        run: npm start
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
